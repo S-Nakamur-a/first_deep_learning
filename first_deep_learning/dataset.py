@@ -74,4 +74,4 @@ def create_random_tiles(n_tiles: int, size: int, out_dir: Path):
 
 
 if __name__ == "__main__":
-    create_random_tiles(15, 40, Path(__file__).parents[1] / "mahjong_tiles")
+    create_random_tiles(15, 40, Path(__file__).parents[1] / "dataset")

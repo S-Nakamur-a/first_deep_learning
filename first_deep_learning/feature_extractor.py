@@ -21,20 +21,6 @@ def convolution(image: np.ndarray, kernel: np.ndarray, stride: int, pad: int):
     return out.astype(np.uint8)
 
 
-
-# def emphasize_bar(image: np.ndarray):
-#     kernel = np.array([
-#         [0, 0, 1, 0, 0],
-#         [0, 0, 1, 0, 0],
-#         [0, 0, 1, 0, 0],
-#         [0, 0, 1, 0, 0],
-#         [0, 0, 1, 0, 0],
-#     ],
-#     dtype=np.float16
-#     ) / 5
-#     return convolution(image, kernel, stride=1, pad=2)
-
-
 def emphasize_bar(image: np.ndarray):
     kernel = np.array([
         [-1, -1, 0, 1, 1],
@@ -61,7 +47,7 @@ if __name__ == '__main__':
 
     out = Path(__file__).parents[1] / "features"
 
-    for image_path in tqdm.tqdm((Path(__file__).parents[1] / "mahjong_tiles").glob("*.png")):
+    for image_path in tqdm.tqdm((Path(__file__).parents[1] / "dataset").glob("*.png")):
         image = cv2.imread(str(image_path), cv2.IMREAD_GRAYSCALE)
         image = 2 * average(emphasize_bar(image))
         cv2.imwrite(str(out / image_path.name), image)
