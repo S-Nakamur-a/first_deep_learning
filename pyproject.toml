@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "first-deep-learning"
+version = "0.1.0"
+description = ""
+authors = ["S-Nakamur-a <25317025+S-Nakamur-a@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.11"
+opencv-python = "^4.5.4"
+numpy = "^1.21.5"
+albumentations = "^1.1.0"
+tqdm = "^4.62.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
